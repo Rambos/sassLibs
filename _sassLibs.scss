@@ -1,16 +1,16 @@
-//Ç°×º
+//å‰ç¼€
 @mixin hack($name, $value){
   -moz-#{$name}: $value;
   -webkit-#{$name}: $value;
   #{$name}: $value;
 }
 
-//Ô²½Ç
+//åœ†è§’
 @mixin borderRadius($param){
   @include hack(border-radius, $param);
 }
 
-//±³¾°É«Í¸Ã÷
+//èƒŒæ™¯è‰²é€æ˜
 @mixin opacityColor($color,$trans){
   $rgba: rgba($color, $trans);
   background: $rgba;
@@ -19,7 +19,7 @@
     filter: none;
   }
 }
-//ÏßĞÔ½¥±ä
+//çº¿æ€§æ¸å˜
 @mixin gra($begin,$end){
   background-image: -webkit-gradient(linear, left top, left bottom, from($begin), to($end));
   background-image: -webkit-linear-gradient(top, $begin, $end);
@@ -29,25 +29,25 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="#{ie-hex-str($begin)}", EndColorStr="#{ie-hex-str($end)}");
 }
 
-//png24±³¾°Í¼Æ¬
+//png24èƒŒæ™¯å›¾ç‰‡
 @mixin opacityImage($path){
   _background: none;
   _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=noscale, src="#{$path}");
 }
 
-//IE6ÏÂÓÃgif±³¾°Í¼Æ¬
+//IE6ä¸‹ç”¨gifèƒŒæ™¯å›¾ç‰‡
 @mixin opacityGif($path){
   _background-image: url("#{$path}");
 }
 
-//±³¾°Í¼Æ¬À­Éì
+//èƒŒæ™¯å›¾ç‰‡æ‹‰ä¼¸
 @mixin stretchedImage($path){
   background-size: 100% 100%;
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="#{$path}", sizingMethod="scale");
   -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="#{$path}", sizingMethod="scale");
 }
 
-//Ğı×ª
+//æ—‹è½¬
 @mixin rotate($degrees){
   @include hack(transform, rotate($degrees));
   zoom: 1;
@@ -56,7 +56,7 @@
 
 }
 
-//·­×ª
+//ç¿»è½¬
 @mixin scale($x, $y){
   @include hack(transform, scale($x, $y));
 }
@@ -88,23 +88,23 @@
   flex-direction: column;
 }
 
-//ÒõÓ°
+//é˜´å½±
 @mixin boxShadow($param){
   @include hack(box-shadow, $param);
 }
 
-//Ë®Æ½¾ÓÖĞ
+//æ°´å¹³å±…ä¸­
 @mixin horizontalCenter{
   @include hack(box-align, center);
   @include hack(justify-content, center);
 }
-//´¹Ö±¾ÓÖĞ
+//å‚ç›´å±…ä¸­
 @mixin verticalCenter{
   @include hack(box-pack,center);
   @include hack(align-items,center);
 }
 
-//Á½¶Ë¶ÔÆë
+//ä¸¤ç«¯å¯¹é½
 @mixin flexJustify{
   @include hack(box-pack, justify);
   @include hack(flex-pack, justify);
